@@ -1,39 +1,42 @@
-
-// 2. This code loads the IFrame Player API code asynchronously.
-var tag = document.createElement('script');
-
-tag.src = "https://www.youtube.com/iframe_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-// 3. This function creates an <iframe> (and YouTube player)
-//    after the API code downloads.
-var player;
-function onYouTubeIframeAPIReady() {
-    player = new YT.Player('player', {
-    videoId: 's7u-xAWWyK4',
-    events: {
-        'onReady': onPlayerReady,
-        'onStateChange': onPlayerStateChange
-    }
-    });
-}
-
-// 4. The API will call this function when the video player is ready.
-function onPlayerReady(event) {
-    event.target.playVideo();
-}
-
-// 5. The API calls this function when the player's state changes.
-//    The function indicates that when playing a video (state=1),
-//    the player should play for six seconds and then stop.
-var done = false;
-function onPlayerStateChange(event) {
-    if (event.data == YT.PlayerState.PLAYING && !done) {
-    setTimeout(stopVideo, 6000);
-    done = true;
-    }
-}
-function stopVideo() {
-    player.stopVideo();
+/**
+ * demo.js
+ * http://www.codrops.com
+ *
+ * Licensed under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+ *
+ * Copyright 2017, Codrops
+ * http://www.codrops.com
+ */
+{
+	setTimeout(() => document.body.classList.add('render'), 60);
+	const navdemos = Array.from(document.querySelectorAll('nav.demos > .demo'));
+	const total = navdemos.length;
+	const current = navdemos.findIndex(el => el.classList.contains('demo--current'));
+	const navigate = (linkEl) => {
+		document.body.classList.remove('render');
+		document.body.addEventListener('transitionend', () => window.location = linkEl.href);
+	};
+	navdemos.forEach(link => link.addEventListener('click', (ev) => {
+		ev.preventDefault();
+		navigate(ev.target);
+	}));
+	document.addEventListener('keydown', (ev) => {
+		const keyCode = ev.keyCode || ev.which;
+		let linkEl;
+		if ( keyCode === 37 ) {
+			linkEl = current > 0 ? navdemos[current-1] : navdemos[total-1];
+		}
+		else if ( keyCode === 39 ) {
+			linkEl = current < total-1 ? navdemos[current+1] : navdemos[0];
+		}
+		else {
+			return false;
+		}
+		navigate(linkEl);
+	});
+	imagesLoaded('.glitch__img', { background: true }, () => {
+		document.body.classList.remove('loading');
+		document.body.classList.add('imgloaded');
+	});
 }
