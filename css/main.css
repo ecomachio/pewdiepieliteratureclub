@@ -4,7 +4,9 @@ body {
     font-size: 12px;
 }
 
-main{margin: 12vh 30vh;
+main{
+    margin: 15vh 30vh;
+    max-width: 100%;
 }
 
 .title{
@@ -19,6 +21,7 @@ main{margin: 12vh 30vh;
     display: flex;
     justify-content: space-around;
     margin-top:10vh;
+    height: 40vh;
 }
 
 .bookWrapper img{
@@ -166,6 +169,7 @@ main{margin: 12vh 30vh;
 }
 
 
+
 .glitch:hover + .grid__item-title span {
 	opacity: 1;
 	animation: glitch-anim-text 0.5s linear;
@@ -180,8 +184,8 @@ main{margin: 12vh 30vh;
 
 /* Glitch styles */
 .glitch {
-    --glitch-width: 150px;
-	--glitch-height: 237.5px;
+    --glitch-width: 20vh;
+	--glitch-height: 31.6vh;
 	position: relative;
 	width: var(--glitch-width);
 	max-width: 400px;
