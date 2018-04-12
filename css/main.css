@@ -1,11 +1,20 @@
+*{
+    margin: 0 auto;
+}
+
 body {
-    background: #111;
     color:#eee;
     font-size: 12px;
+
 }
 
 main{
-    margin: 12vh 30vh;
+    height:100vh;
+    background: #111;
+}
+
+.homeWrapper{
+    padding: 12vh 30vh;
     max-width: 100%;
 }
 
@@ -41,19 +50,19 @@ main{
     font-size:1.3em;
 }
 
-.olderReviews{
+.olderReviewsLink{
     margin:15vh 0 0 55vw;
     font-size: 2.5vh;
     cursor: pointer;
 }
-.olderReviews > a {
+.olderReviewsLink > a {
     text-decoration: none;
     color: white;
     z-index: 1;
     position: relative;
   }
 
-  .olderReviews > a:before {
+  .olderReviewsLink > a:before {
     content: "";
     position: absolute;
     width: 100%;
@@ -66,11 +75,55 @@ main{
     transform-origin: 0% 100%;
     transition: .15s linear;
   }
-  .olderReviews > a:hover:before,
-  .olderReviews > a:focus:before {
+  .olderReviewsLink > a:hover:before,
+  .olderReviewsLink > a:focus:before {
     visibility: visible;
     transform: scaleX(1);
   }
+
+section{
+    background: #222;
+    height: 100vh;
+}
+
+.februaryReview{
+}
+
+.olderReviewsWrapper{
+    padding: 7vh 30vh;
+    max-width: 100%;
+
+}
+
+.februaryReviewTitle{
+    font-size: 2.3em;
+}
+
+.olderReviewsWrapper .video{
+    padding: 5%;
+}
+
+.olderReviewsWrapper .video #player{
+    --p-height: 50vh;
+    width: calc(var(--p-height) * 1.77);
+    height: var(--p-height);
+    margin-left: calc(50% - 15vw);
+    margin-top: -5%;
+}
+
+.bookList{
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.bookList img{
+    cursor: pointer;
+    --booklist-width: 14vh;
+    --booklist-height: calc(var(--glitch-width) * 1.58);
+    height: var(--booklist-height);
+    width: var(--booklist-width);
+}
 
 .glitch--style-1 {
 	--gap-horizontal: 10px;
