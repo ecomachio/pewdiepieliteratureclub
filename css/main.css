@@ -1,5 +1,7 @@
 *{
     margin: 0 auto;
+    --booklist-width: 14vh;
+    --booklist-height: calc(var(--booklist-width) * 1.58);
 }
 
 body {
@@ -14,7 +16,7 @@ main{
 }
 
 .homeWrapper{
-    padding: 12vh 30vh;
+    padding: 12vh 15vw;
     max-width: 100%;
 }
 
@@ -33,6 +35,22 @@ main{
     height: 40vh;
 }
 
+
+@media screen and (max-aspect-ratio: 5/4) {
+    .subtitle {
+        display: none;
+    }
+
+    .homeWrapper{
+        padding: 12vh 12vw;
+    }
+    .title{
+        margin-left:-2vw;
+    }
+
+}
+
+
 .bookWrapper img{
     height: 30vh;
     width: 20vh;
@@ -43,15 +61,18 @@ main{
 }
 
 .bookWrapper .bookDesc{
-    padding: 1.2% 0;
+    padding: 1.5% 0;
+    font-size: 1.5em;
 }
 
 .bookWrapper .bookTitle{
-    font-size:1.3em;
+    font-size:1.7em;
 }
 
+
+
 .olderReviewsLink{
-    margin:15vh 0 0 55vw;
+    margin:15vh 0 0 57vw;
     font-size: 2.5vh;
     cursor: pointer;
 }
@@ -82,11 +103,15 @@ main{
   }
 
 section{
-    background: #222;
+    background: #111;
+}
+
+.review{
     height: 100vh;
 }
 
-.februaryReview{
+.review{
+
 }
 
 .olderReviewsWrapper{
@@ -95,20 +120,27 @@ section{
 
 }
 
-.februaryReviewTitle{
+.reviewTitle{
     font-size: 2.3em;
+}
+
+.reviewBookTitle{
+    font-size: 1.6em;
+    margin-top: 3%;
+    width: calc(var(--booklist-width) + 5px);
 }
 
 .olderReviewsWrapper .video{
     padding: 5%;
 }
 
-.olderReviewsWrapper .video #player{
+.olderReviewsWrapper .video #player2, .olderReviewsWrapper .video #player{
     --p-height: 50vh;
     width: calc(var(--p-height) * 1.77);
     height: var(--p-height);
     margin-left: calc(50% - 15vw);
     margin-top: -5%;
+
 }
 
 .bookList{
@@ -117,12 +149,16 @@ section{
     padding: 0;
 }
 
+.bookList li{
+
+
+}
+
 .bookList img{
     cursor: pointer;
-    --booklist-width: 14vh;
-    --booklist-height: calc(var(--glitch-width) * 1.58);
     height: var(--booklist-height);
     width: var(--booklist-width);
+
 }
 
 .glitch--style-1 {
@@ -245,7 +281,7 @@ section{
 	height: var(--glitch-height);
 	max-height: calc(400px * 1.25);
 	overflow: hidden;
-	margin: 0 auto;
+	margin: 0 0 3% 0;
 }
 
 .glitch:hover {

@@ -17,11 +17,18 @@ function onYouTubeIframeAPIReady() {
         'onStateChange': onPlayerStateChange
     }
     });
+    player2 = new YT.Player('player2', {
+    videoId: 'oZ_qiYc133U',
+    events: {
+        'onReady': onPlayerReady,
+        'onStateChange': onPlayerStateChange
+    }
+    });
 }
 
 // 4. The API will call this function when the video player is ready.
 function onPlayerReady(event) {
-    event.target.playVideo();
+    //event.target.playVideo();
 }
 
 // 5. The API calls this function when the player's state changes.
