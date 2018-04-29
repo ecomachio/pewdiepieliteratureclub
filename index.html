@@ -16,7 +16,7 @@
         <link rel="stylesheet" type="text/css" href="css/main.css" />
     </head>
     <body>
-        <main>
+        <main class="container">
             <div class="homeWrapper">
                 <div class="title">
                     <p>pewdiepie's literature club</p>
@@ -63,18 +63,74 @@
                     </div>
                 </div>
                 <div class="olderReviewsLink">
-                    <a>Older reviews</a>
+                    <a href="#olderReviewsAnchor">Older reviews</a>
                 </div>
             </div>
         </main>
         <div class="gradient"></div>
         <section>
-            <div class="olderReviewsWrapper">
-                <div class="review">
+            <div class="olderReviewsWrapper" >
+                <div class="review" >
+                    <div class="reviewTitle" id="olderReviewsAnchor">
+                        <p>march review</p>
+                    </div>
+                    <div class="video" >
+                        <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+                        <div id="player3"></div>
+                    </div>
+                    <div class="reviewBooks">
+                        <ul class="bookList">
+                            <li class="book4">
+                                <img src="img/m4.jpg" alt="" onclick="player3.seekTo(51, true)">
+                                <p class="reviewBookTitle">Tony Takitani</p>
+                            </li>
+                            <li class="book1">
+                                <img src="img/m1.jpg" alt="" onclick="player3.seekTo(101, true)">
+                                <p class="reviewBookTitle">The Old Man and the Sea</p>
+                            </li>
+                            <li class="book2">
+                                <img src="img/m2.jpg" alt="" onclick="player3.seekTo(240, true)">
+                                <p class="reviewBookTitle">Moby-Dick or, The Whale</p>
+                            </li>
+                            <li class="book3">
+
+                                <img src="img/m3.jpg" alt="" onclick="player3.seekTo(452, true)">
+                                <p class="reviewBookTitle">Man's Search for Meaning</p>
+                            </li>
+                            <li class="book5">
+                                <img src="img/m4.5.jpg" alt="" onclick="player3.seekTo(573, true)">
+                                <p class="reviewBookTitle">Flowers for Algernon</p>
+                            </li>
+                            <li class="book4">
+                                <img src="img/m8.jpg" alt="" onclick="player3.seekTo(640, true)">
+                                <p class="reviewBookTitle">The Metamorphosis</p>
+                            </li>
+                            <li class="book1">
+                                <img src="img/m6.jpg" alt="" onclick="player3.seekTo(970, true)">
+                                <p class="reviewBookTitle">The Temple of the Golden Pavillion</p>
+                            </li>
+                            <li class="book6">
+                                    <img src="img/m5.jpg" alt="" onclick="player3.seekTo(1002, true)">
+                                    <p class="reviewBookTitle">The Sound of Waves</p>
+                                </li>
+
+                            <li class="book3">
+
+                                <img src="img/m10.jpg" alt="" onclick="player3.seekTo(1012, true)">
+                                <p class="reviewBookTitle">The Book of Five Rings</p>
+                            </li>
+                            <li class="book2">
+                                <img src="img/m7.jpg" alt="" onclick="player3.seekTo(1171, true)">
+                                <p class="reviewBookTitle">Bushido: The Soul of Japan</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="review" >
                     <div class="reviewTitle">
                         <p>febrary review</p>
                     </div>
-                    <div class="video">
+                    <div class="video" >
                         <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
                         <div id="player"></div>
                     </div>
@@ -149,5 +205,22 @@
         </section>
         <script src="js/imagesloaded.pkgd.min.js"></script>
         <script src="js/demo.js"></script>
+        <script  src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script>
+        // Wait for window load
+        addLoaderClass();
+        $(window).on('load', function(){
+            // Animate loader off screen
+            addLoaderClass();
+        });
+        function addLoaderClass() {
+            const container = document.getElementsByClassName('container')[0];
+            if(container.classList.contains('loader')) {
+                container.classList.remove('loader');
+            } else {
+                container.classList.add('loader');
+            }
+        }
+        </script>
     </body>
 </html>x

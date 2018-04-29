@@ -2,13 +2,14 @@
     margin: 0 auto;
     --booklist-width: 14vh;
     --booklist-height: calc(var(--booklist-width) * 1.58);
+    scroll-behavior: smooth;
 }
 
 body {
     color:#eee;
     font-size: 12px;
     background: #111;
-
+    max-width: 2800px;
 }
 
 main{
@@ -36,22 +37,6 @@ main{
     height: 40vh;
 }
 
-
-@media screen and (max-aspect-ratio: 5/4) {
-    .subtitle {
-        display: none;
-    }
-
-    .homeWrapper{
-        padding: 12vh 12vw;
-    }
-    .title{
-        margin-left:-2vw;
-    }
-
-}
-
-
 .bookWrapper img{
     height: 30vh;
     width: 20vh;
@@ -76,6 +61,7 @@ main{
     margin:15vh 0 0 57vw;
     font-size: 2.5vh;
     cursor: pointer;
+    white-space: nowrap;
 }
 .olderReviewsLink > a {
     text-decoration: none;
@@ -108,7 +94,8 @@ section{
 }
 
 .review{
-    height: 100vh;
+    min-height: 100vh;
+    padding: 10% 0;
 }
 
 .review2{
@@ -117,7 +104,7 @@ section{
 
 .olderReviewsWrapper{
     padding: 7vh 30vh;
-    max-width: 100%;
+
 
 }
 
@@ -135,7 +122,7 @@ section{
     padding: 5%;
 }
 
-.olderReviewsWrapper .video #player2, .olderReviewsWrapper .video #player{
+.olderReviewsWrapper .video #player3, .olderReviewsWrapper .video #player2, .olderReviewsWrapper .video #player{
     --p-height: 50vh;
     width: calc(var(--p-height) * 1.77);
     height: var(--p-height);
@@ -147,7 +134,9 @@ section{
 .bookList{
     display: flex;
     list-style: none;
-    padding: 0;
+    margin: 0 -15%;
+    flex-wrap: wrap;
+
 }
 
 .bookList li{
@@ -800,3 +789,49 @@ section{
 
 
 
+  .loader {
+    position: relative;
+  }
+
+  .loader::after {
+    font-size: 1.5em;
+    background-color: rgba(0,0,0,.8);
+    content: 'Loading';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+
+  @media screen and (max-aspect-ratio: 6    /4) {
+    .subtitle {
+        display: none;
+    }
+
+    .homeWrapper{
+        padding: 12vh 12vw;
+    }
+    .title{
+        margin-left:-2vw;
+    }
+    .olderReviewsWrapper{
+        padding: 7vh 12vh;
+
+    }
+    .olderReviewsWrapper .video #player3, .olderReviewsWrapper .video #player2, .olderReviewsWrapper .video #player{
+        --p-height: 50vh;
+        width: calc(var(--p-height) * 1.77);
+        height: var(--p-height);
+        margin-left: calc(50% - 25vw);
+        margin-top: -5%;
+
+    }
+    .bookList{
+        margin: inherit;
+    }
+}
